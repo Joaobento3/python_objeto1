@@ -14,27 +14,39 @@ class ProgressaoAritmetica:
         self.a1 = a1
         self.r = r
 
-    def calcular_termo(self, k):
-        return self.a1 + self.r * (k - 1)
+    def calcular_termo(self):
+        an = self.a1 + self.r * (self.n - 1)
+        soma = self.n * (self.a1 + an) / 2
+        return soma
     
     def gerar_termos(self):
-        return [self.calcular_termo(i) for i in range (1, self.n + 1)]
-    
-    def soma(self):
-        an = self.calcular_termo(self.n)
-        return self.n * (self.a1 + an) / 2
+        termos = []
+        for i in range (self.n):
+            termo = self.a1 + self.r * i
+            termos.append(termo)
+        return termos
     
 
 def main():
-    n = int(input("\nDigite o número de termos da P.A: "))
-    a1 = int(input("Digite o primeiro termos (a1): "))
-    r = int(input("Digite a razão (r): "))
+    print("\n====Progressão Aritmética====\n")
+
+    n = int(input("Digite o número de termos da P.A: "))
+    a1 = float(input("Digite o primeiro termos (a1): "))
+    r = float(input("Digite a razão (r): "))
 
     pa = ProgressaoAritmetica(n, a1, r)
 
     termos = pa.gerar_termos()
-    print("\nTermos da P.A.:", termos)
-    print("Soma dos termos:", pa.soma())
+
+    print("\nTermos da P.A.: ")
+    contador = 1
+    for termo in termos:
+        print(f"Termo {contador}: {termo}")
+        contador += 1
+
+    soma = pa.calcular_termo
+
+    print(f"\nSoma dos {n} termos: {soma}\n")
         
 
 
