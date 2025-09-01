@@ -4,4 +4,5 @@ class criptografiaTexto:
 
     
     def criptografando():
+
         
