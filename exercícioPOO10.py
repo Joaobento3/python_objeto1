@@ -67,7 +67,7 @@ def main():
 
                 if nome_perso and constelacao_perso and cavaleiro_tipo:
                     if cavaleiro_tipo == "B":
-                        personagem = CavaleiroDeBronze(nome, constelacao)
+                        personagem = CavaleiroDeBronze()
                         cavaleiro_de_bronze.append(personagem)
                         print("\nPersonagem cadastrado com sucesso!\n")
 
