@@ -20,7 +20,7 @@ class Lutador(ABC):
 
 class Saiyajin(Lutador):
     def __init__(self, nome, nivelpoder):
-        self.nome == nome
+        self.nome = nome
         self.nivelpoder = nivelpoder
 
 
@@ -110,7 +110,7 @@ def cadastrar_lutador():
 
         else:
             print("\nRaça inválida\n")
-            return None
+            return lutador
         
     except ValueError as e:
         print("Erro:", e)
@@ -123,7 +123,7 @@ def main():
 
 
     while True:
-        print("\n====TORNEIO DE ARTES MACIAIS====")
+        print("\n====TORNEIO DE ARTES MARCIAIS====")
         print("1- Cadastrar lutador")
         print("2- Listar lutadores")
         print("3- Simular ataque")
@@ -145,7 +145,7 @@ def main():
 
             else:
                 for i, l in enumerate(lutadores):
-                    print(f"{i+1} - {l.get_nome()}({l.class__.__name__}), Poder: {l.get_poder()}")
+                    print(f"{i+1} - {l.get_nome()}({l.__class__.__name__}), Poder: {l.get_nivelpoder()}")
 
 
         elif opcao == "3":
