@@ -33,7 +33,7 @@ class Saiyajin(Lutador):
     
 
     def atacar(self):
-        return f"\n{self.nome} (Saiyajin) laçou um kamehameha com nível de poder de: {self.nivelpoder * 2}\n"
+        return f"\n{self.nome} (Saiyajin) lançou um kamehameha com nível de poder de: {self.nivelpoder * 2}\n"
     
 
 
@@ -48,7 +48,7 @@ class Androide(Lutador):
         return self.nome
     
 
-    def get_nivepoder(self):
+    def get_nivelpoder(self):
         return self.nivelpoder
     
 
@@ -110,7 +110,9 @@ def cadastrar_lutador():
 
         else:
             print("\nRaça inválida\n")
-            return lutador
+            return None
+        
+        return lutador
         
     except ValueError as e:
         print("Erro:", e)
@@ -129,7 +131,7 @@ def main():
         print("3- Simular ataque")
         print("4- Sair")
 
-        opcao = input("\nEsolha: ")
+        opcao = input("\nEscolha: ")
 
 
         if opcao == "1":
