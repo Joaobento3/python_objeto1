@@ -1,1 +1,1 @@
-# python_objeto1
+# exercícios em POO do curso
